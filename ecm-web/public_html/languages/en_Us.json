@@ -1,0 +1,12 @@
+{
+    "msg.login.efetuato": "Login successfully made.",
+    "msg.bomdia": "Good morning Mr(a).",
+    "msg.boatarde": "Good afternoon Mr(a).",
+    "msg.boanoite": "Goodnight Mr(a).",
+    "msg.salvo": "Record saved successfully.",
+    "msg.cemregistros": "Showing only the 100 records with more recent date.",
+    "msg.excluido": "Successfully deleted record.",
+    "home.btn.sair": "Logout",
+    "home.btn.informacoes": "Information",
+    "titulo.busca": "Search"
+}

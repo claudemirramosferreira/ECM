@@ -1,0 +1,14 @@
+{
+    "msg.login.efetuato": "Login efetuado com sucesso.",
+    "msg.bomdia": "Bom dia Sr(a).",
+    "msg.boatarde": "Boa tarde Sr(a).",
+    "msg.boanoite": "Boa noite Sr(a).",
+    "msg.salvo": "Registro salvo com sucesso.",
+    "msg.cemregistros": "Exibindo apenas os 100 registros com data mais recente.",
+    "msg.excluido": "Registro excluído com sucesso.",
+    "autenticar.errologin": "Autenticação inválida.",
+    "home.btn.sair": "Sair",
+    "home.btn.informacoes": "Informações",
+    "titulo.busca": "Busca"
+}
+

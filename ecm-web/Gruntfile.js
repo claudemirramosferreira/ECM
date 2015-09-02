@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         folder:{
             app:'public_html/',
             dist:'dist/',
-            wildfly:'C:/interactive/wildfly-8.1.0.Final/standalone/deployments/ecm-web.war/'
+            wildfly:'C:/AlfrescoJEAP/jboss-eap-6.4/standalone/deployments/ecm-web.war/'
         },
         
         pkg: grunt.file.readJSON('package.json'),

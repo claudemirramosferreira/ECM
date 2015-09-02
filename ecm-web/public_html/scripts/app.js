@@ -1,5 +1,5 @@
-/* global Home, AtividadeDirecionada, Avaliacao, AvaliacaoFormulario, Biomecanica, Demanda, MooreGarg, Posto, ProcessoInss, Produto, HomeCtrl, TopCtrl, AuthInterceptor, Atendimento, Beneficio, EntrevistaSocial, Gestacao, Visita, AtendimentoCtrl, BeneficioCtrl, EntrevistaSocialCtrl, GestacaoCtrl, VisitaCtrl, angular, AuthCtrl, EmpresaTerceira, EmpresaTerceiraConsultaCtrl, AssistenciaSocialAtendimentoCtrl, AssistenciaSocialBeneficioCtrl, AssistenciaSocialEntrevistaSocialCtrl, AssistenciaSocialVisitaCtrl, Auth, InfoInicial, AvaliacaoConsultaCtrl, DemandaErgonomicaCtrl, DemandaErgonomica, PerfilConsultarCtrl, ExtintorConsultaCtrl, Perfil, Extintor, AvaliacaoCadastroCtrl, EmpresaTerceiraCadastroCtrl, TipoExtintorConsultaCtrl, TipoExtintorCadastroCtrl, SegurancaPerfilItens, RequiredField, ExtintorCtrl, RecargaTesteHidrostaticoConsultaCtrl, MarcaExtintorCadastroCtrl, MarcaExtintorConsultaCtrl, HistoricoExtintores, Unidade, MarcaExtintor, Localizacao, TipoExtintor, AtividadeDirecionadaConsultaCtrl, AtividadeDirecionadaCtrl, RecargaTesteHidrostaticoCtrl, MotivoVisita, VisitaConsultaCtrl, GestacaoCadastroCtrl, PerfilGrupo, Email, UsuarioManutencao, UsuarioUndOrganizacional, UsuarioSolicitarCadastro, UnidadeOrganizacional, UsuarioStatus, AprovarUsuario, RemoverEspaco */
-
+/* global Home, AtividadeDirecionada, Avaliacao, AvaliacaoFormulario, Biomecanica, Demanda, MooreGarg, Posto, ProcessoInss, Produto, HomeCtrl, TopCtrl,  Atendimento, Beneficio, EntrevistaSocial, Gestacao, Visita, AtendimentoCtrl, BeneficioCtrl, EntrevistaSocialCtrl, GestacaoCtrl, VisitaCtrl, angular, AuthCtrl, EmpresaTerceira, EmpresaTerceiraConsultaCtrl, AssistenciaSocialAtendimentoCtrl, AssistenciaSocialBeneficioCtrl, AssistenciaSocialEntrevistaSocialCtrl, AssistenciaSocialVisitaCtrl, Auth, InfoInicial, AvaliacaoConsultaCtrl, DemandaErgonomicaCtrl, DemandaErgonomica, PerfilConsultarCtrl, ExtintorConsultaCtrl, Perfil, Extintor, AvaliacaoCadastroCtrl, EmpresaTerceiraCadastroCtrl, TipoExtintorConsultaCtrl, TipoExtintorCadastroCtrl, SegurancaPerfilItens, RequiredField, ExtintorCtrl, RecargaTesteHidrostaticoConsultaCtrl, MarcaExtintorCadastroCtrl, MarcaExtintorConsultaCtrl, HistoricoExtintores, Unidade, MarcaExtintor, Localizacao, TipoExtintor, AtividadeDirecionadaConsultaCtrl, AtividadeDirecionadaCtrl, RecargaTesteHidrostaticoCtrl, MotivoVisita, VisitaConsultaCtrl, GestacaoCadastroCtrl, PerfilGrupo, Email, UsuarioManutencao, UsuarioUndOrganizacional, UsuarioSolicitarCadastro, UnidadeOrganizacional, UsuarioStatus, AprovarUsuario, RemoverEspaco */
+// AuthInterceptor,
 var ecmApp = angular.module('ecmApp',
         [
             'ngSanitize',
@@ -32,7 +32,7 @@ ecmApp.config([
                     redirectTo: '/404.html'
                 });
 
-        $httpProvider.interceptors.push('AuthInterceptor');
+//        $httpProvider.interceptors.push('AuthInterceptor');   // FIXME 
     }
 ])
         .config(['$translateProvider', function ($translateProvider) {
@@ -47,9 +47,9 @@ ecmApp.config([
 
             }])
 
-        .run(function ($http, $location, $rootScope, $cookies, InfoInicial) {
+        .run(function ($http, $location, $rootScope, $cookies) {    // , InfoInicial FIXME
             $http.defaults.headers.common.Authorization = null;
-            InfoInicial.verificar();
+//            InfoInicial.verificar();
             $rootScope.carregandoScreen = 0;
         });
 
@@ -67,17 +67,17 @@ ecmApp.constant('ecmRest', urlBase + 'ecm-rest/');
 //------------ Services --------------------------------------------------------
 
 //SECURITY
-ecmApp.service('Auth', Auth);
-ecmApp.service('AuthInterceptor', AuthInterceptor);
-ecmApp.service('InfoInicial', InfoInicial);
-ecmApp.service('Usuario', Usuario);
+//ecmApp.service('Auth', Auth);
+//ecmApp.service('AuthInterceptor', AuthInterceptor);
+//ecmApp.service('InfoInicial', InfoInicial);
+//ecmApp.service('Usuario', Usuario);
 
 
 
 //----------- CONTROLLERS ------------------------------------------------------
 ecmApp.controller("HomeCtrl", ['$injector', '$scope', HomeCtrl]);
 ecmApp.controller("TopCtrl", ['$injector', '$scope', TopCtrl]);
-ecmApp.controller("AuthCtrl", ['$injector', '$scope', AuthCtrl]);
+//ecmApp.controller("AuthCtrl", ['$injector', '$scope', AuthCtrl]);
 
 
 //------------------------------------------------------------------------------

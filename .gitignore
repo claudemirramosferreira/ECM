@@ -33,5 +33,3 @@ ecm-web/bower_components/
 ecm-web/dist/
 ecm-web/.tmp/
 /ecm-web/node_modules/
-ecm-web/nbproject/
-ehs-web/public_html

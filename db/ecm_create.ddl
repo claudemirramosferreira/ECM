@@ -29,3 +29,5 @@ CREATE TABLE `tipo_documento` (
 /*================================================================================*/
 
 CREATE UNIQUE INDEX `IX_sys_versao1` ON `sys_versao` (`tx_versao`);
+
+CREATE UNIQUE INDEX `ak_tx_tipo_documento` ON `tipo_documento` (`tx_tipo_documento`);

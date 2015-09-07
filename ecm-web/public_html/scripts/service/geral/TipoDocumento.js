@@ -3,12 +3,12 @@ function TipoDocumento($resource, ecmRest) {
     return $resource(path, {}, {
         buscarPorDescricao: {
             method: "GET",
-            url: path + "/descricao"
-        },
-        buscarTodos: {
-            method: "GET",
             url: path + "/"
         },
+//        buscarTodos: {
+//            method: "GET",
+//            url: path + "/"
+//        },
         buscarPorId: {
             method: "GET",
             url: path + "/id"

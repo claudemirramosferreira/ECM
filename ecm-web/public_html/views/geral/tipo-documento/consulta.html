@@ -31,10 +31,13 @@
                 </div>
 
             </div>
+            
             <hr>
+            
             <div id="msgVazia" ng-hide="mensagemNenhumRegistro == ''">
                 {{mensagemNenhumRegistro|translate}}				
             </div>
+            
             <span ng-show="itens.length > 0">
                 <table class="tfull">
                     <thead class="blue">
@@ -46,10 +49,10 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in itens">
-                            <td ng-click="controller.editar(item.id)"><a >{{item.txTipoServico}}</a></td>
+                            <td ng-click="controller.editar(item.id)"><a >{{item.txTipoDocumento}}</a></td>
                             <td>
                                 <div class="switch round tiny">
-                                    <input id="boxSwitch{{$index}}" ng-model="item.csSituacao" ng-checked="item.csSituacao" type="checkbox" ng-click="controller.modificarSituacao(item)">
+                                    <input id="boxSwitch{{$index}}" ng-model="item.csAtivo" ng-checked="item.csAtivo" type="checkbox" ng-click="controller.modificarSituacao(item)">
                                     <label style="padding:0; margin:0;" for="boxSwitch{{$index}}"></label>
                                 </div>
                             </td>
@@ -59,7 +62,7 @@
                 </table>
                 {{pagina.totalItem}} {{"registros.encontrados"|translate}}
                 <div class="pagination-centered">
-                    <pagination ng-click="controller.buscarPorDescricaoOuSituacao()"  items-per-page="pagina.limit" max-size="pagina.limit" boundary-links="true" total-items="pagina.totalItem" page="pagina.page" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+                    <pagination ng-click="controller.buscarPorDescricaoOuSituacao()"  items-per-page="pagina.limit" max-size="pagina.limit" total-items="pagina.totalItem" page="pagina.page" boundary-links="true" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
                 </div>
             </span>		
         </div>

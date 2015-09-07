@@ -3,8 +3,6 @@
 
 function TipoDocumentoConsultaCtrl() {
     CoreCtrl.apply(this, arguments);
-    this.scope("itens");
-    this.scope("mensagemNenhumRegistro");
     
     this.scope("pesquisa", {descricao: "", situacao: ""});
 
@@ -20,31 +18,32 @@ function TipoDocumentoConsultaCtrl() {
 $.extend(TipoDocumentoConsultaCtrl.prototype, CoreCtrl.prototype);
 
 TipoDocumentoConsultaCtrl.prototype.abrirPagina = function () {
-    this.buscarPorDescricaoOuSituacao();
+    this.buscarPorDescricao();
 };
 
-TipoDocumentoConsultaCtrl.prototype.buscarPorDescricaoOuSituacao = function (pagina) {
+TipoDocumentoConsultaCtrl.prototype.buscarPorDescricao = function (pagina) {
     if (pagina) {
         this.scope("pagina").page = pagina;
     }
+    var desc = this.scope("pesquisa").descricao;
     var dados = {
-                descricao: this.scope("pesquisa").descricao,
+//                descricao: this.scope("pesquisa").descricao,
                 situacao: this.scope("pesquisa").situacao,
                 page: this.scope("pagina").page,
                 limit: this.scope("pagina").limit
             };
-    this.service.buscarPorDescricaoOuSituacao(
-            dados, this.buscarPorDescricaoOuSituacaoSucesso.bind(this), this.buscarPorDescricaoOuSituacaoErro.bind(this)
+    this.service.buscarPorDescricao(
+            desc, dados, this.buscarPorDescricaoSucesso.bind(this), this.buscarPorDescricaoErro.bind(this)
             );
 };
 
-TipoDocumentoConsultaCtrl.prototype.buscarPorDescricaoOuSituacaoSucesso = function (retorno) {
+TipoDocumentoConsultaCtrl.prototype.buscarPorDescricaoSucesso = function (retorno) {
     this.scope("mensagemNenhumRegistro", "");
     this.scope("itens", retorno.element);
     this.scope("pagina").totalItem = retorno.totalProperty;
 };
 
-TipoDocumentoConsultaCtrl.prototype.buscarPorDescricaoOuSituacaoErro = function (erro) {
+TipoDocumentoConsultaCtrl.prototype.buscarPorDescricaoErro = function (erro) {
     console.log(erro);
     
     if (erro.data.messages[0].type !== "EMPTY") {

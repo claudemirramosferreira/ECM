@@ -1,6 +1,6 @@
 /* global CoreCtrl, angular */
 
-function TipoServicoCadastroCtrl() {
+function TipoDocumentoCadastroCtrl() {
     CoreCtrl.apply(this, arguments);
     this.scope("acao", this.$routeParams.acao);
 
@@ -17,10 +17,10 @@ function TipoServicoCadastroCtrl() {
     this.abrirPagina();
 }
 
-$.extend(TipoServicoCadastroCtrl.prototype, CoreCtrl.prototype);
+$.extend(TipoDocumentoCadastroCtrl.prototype, CoreCtrl.prototype);
 
 
-TipoServicoCadastroCtrl.prototype.adicionarTipoServico = function () {
+TipoDocumentoCadastroCtrl.prototype.adicionarTipoServico = function () {
     this.cleanAlert();
     this.limparMensagensCamposObrigatorios();
     this.scope("duplicado", false);
@@ -41,7 +41,7 @@ TipoServicoCadastroCtrl.prototype.adicionarTipoServico = function () {
     }
 };
 
-TipoServicoCadastroCtrl.prototype.validarDuplicacao = function (retorno) {
+TipoDocumentoCadastroCtrl.prototype.validarDuplicacao = function (retorno) {
     var tipoServ = retorno.element;
     this.scope("duplicado", tipoServ !== null);
 
@@ -52,12 +52,12 @@ TipoServicoCadastroCtrl.prototype.validarDuplicacao = function (retorno) {
     }
 }
 
-TipoServicoCadastroCtrl.prototype.adicionarItem = function () {
+TipoDocumentoCadastroCtrl.prototype.adicionarItem = function () {
     this.scope("tipoServicoList").push(this.scope("tipoServico"));
     this.scope("tipoServico", {id: null, txTipoServico: "", csSituacao: true});
 };
 
-TipoServicoCadastroCtrl.prototype.validarDuplicacaoTela = function () {
+TipoDocumentoCadastroCtrl.prototype.validarDuplicacaoTela = function () {
     var duplicado = this.scope("duplicado");
     var txTipoServico = this.scope("tipoServico").txTipoServico;
     angular.forEach(this.scope("tipoServicoList"), function (item) {
@@ -68,22 +68,22 @@ TipoServicoCadastroCtrl.prototype.validarDuplicacaoTela = function () {
     this.scope("duplicado", duplicado);
 };
 
-TipoServicoCadastroCtrl.prototype.validarDuplicacaoBanco = function () {
+TipoDocumentoCadastroCtrl.prototype.validarDuplicacaoBanco = function () {
     this.service.buscarPorIdEDescricao(
             {id: this.scope("tipoServico").id, txTipoServico: this.scope("tipoServico").txTipoServico},
     this.validarDuplicacao.bind(this)
             );
 };
 
-TipoServicoCadastroCtrl.prototype.showMsgDuplicado = function () {
+TipoDocumentoCadastroCtrl.prototype.showMsgDuplicado = function () {
     this.showAlert("tipo.servico.duplicado", "danger");
 };
 
-TipoServicoCadastroCtrl.prototype.excluirConfirmar = function (index) {
+TipoDocumentoCadastroCtrl.prototype.excluirConfirmar = function (index) {
     this.scope("tipoServicoList").splice(index, 1);
 }
 
-TipoServicoCadastroCtrl.prototype.abrirPagina = function () {
+TipoDocumentoCadastroCtrl.prototype.abrirPagina = function () {
     if (this.scope("acao") === "editar") {
         idTipoServico = this.$location.search().id;
         this.service.buscarPorId({id: idTipoServico},
@@ -96,7 +96,7 @@ TipoServicoCadastroCtrl.prototype.abrirPagina = function () {
     }
 };
 
-TipoServicoCadastroCtrl.prototype.salvar = function () {
+TipoDocumentoCadastroCtrl.prototype.salvar = function () {
     this.cleanAlert();
     if (this.scope("acao") === "editar") {
         this.scope("tipoServicoList", []);
@@ -110,22 +110,22 @@ TipoServicoCadastroCtrl.prototype.salvar = function () {
 };
 
 
-TipoServicoCadastroCtrl.prototype.salvarSucesso = function (retorno) {
+TipoDocumentoCadastroCtrl.prototype.salvarSucesso = function (retorno) {
     this.cleanAlert();
     this.showAlert("registro.salvo", "success");
     this.$timeout(this.cancelar.bind(this), 1000);
 };
 
-TipoServicoCadastroCtrl.prototype.salvarErro = function (retorno) {
+TipoDocumentoCadastroCtrl.prototype.salvarErro = function (retorno) {
     this.cleanAlert();
     this.showAlert("erro.registro.salvo", "danger");
     console.log(retorno);
 };
 
-TipoServicoCadastroCtrl.prototype.limparMensagensCamposObrigatorios = function () {
+TipoDocumentoCadastroCtrl.prototype.limparMensagensCamposObrigatorios = function () {
     this.scope("camposObrigatorios", {});
 };
 
-TipoServicoCadastroCtrl.prototype.cancelar = function () {
+TipoDocumentoCadastroCtrl.prototype.cancelar = function () {
     this.$location.path('seguranca-trabalho/tipo-servico');
 };

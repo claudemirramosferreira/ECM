@@ -13,8 +13,10 @@ function CoreCtrl($injector, $scope) {
 
     this.alerts = [];
     this.scope('alerts', this.alerts);
-    this.scope('paginacao', this.alerts);
-    
+
+    this.scope("itens", []);
+    this.scope("mensagemNenhumRegistro", "");
+        
     this.scope("paginacao", {page: 1, limit: 10});
     this.inicializarPaginacao();
     

@@ -3,7 +3,7 @@ function TopCtrl(){
     CoreCtrl.apply(this, arguments);
     this.definirIdioma();
     
-    this.serviceAuth = this.inject('Auth');
+//    this.serviceAuth = this.inject('Auth');  FIXME continuar seguranca
 }
 
 $.extend(TopCtrl.prototype, CoreCtrl.prototype);

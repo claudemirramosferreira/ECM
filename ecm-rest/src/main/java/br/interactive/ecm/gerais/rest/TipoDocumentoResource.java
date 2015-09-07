@@ -16,6 +16,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -43,8 +44,13 @@ public class TipoDocumentoResource {
     
     @GET
     @Path("/{descricao}")
-    public GridResponse<TipoDocumentoDTO> getByDescricao(@PathParam ("descricao") String descricao) {
-        return service.getAll();    // FIXME continue
+    public GridResponse<TipoDocumentoDTO> getByDescricao(
+                    @PathParam("descricao") String descricao,
+                    @QueryParam("situacao") String situacao,
+                    @QueryParam("limit") int limit,
+                    @QueryParam("page") int page) {
+        final int[] range = {page, limit};
+        return service.getByDescricao(descricao, situacao, range);
     }
     
     @GET

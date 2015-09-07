@@ -25,6 +25,10 @@ public class TipoDocumentoService {
         return dao.getAll();
     }
     
+    public GridResponse<TipoDocumentoDTO> getByDescricao(String descricao, String situacao, int[] range) {
+        return dao.getByDescricao(descricao, situacao, range);
+    }
+    
     public Message salvar(TipoDocumento tipoDocumento) {
         return null;        // FIXME continuar
     }

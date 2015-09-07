@@ -28,8 +28,10 @@ public class ApplicationConfig extends Application {
      * out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(br.interactive.ecm.gerais.rest.AuthenticatorResource.class);
         resources.add(br.interactive.ecm.gerais.rest.CrossOriginResourceSharingFilter.class);
         resources.add(br.interactive.ecm.gerais.rest.SysVersaoResource.class);
+        resources.add(br.interactive.ecm.gerais.rest.TipoDocumentoResource.class);
         resources.add(br.interactive.ecm.mapper.BusinessExceptionMapper.class);
         resources.add(br.interactive.ecm.mapper.ConstraintViolationMapper.class);
         resources.add(br.interactive.ecm.mapper.EJBExceptionMapper.class);

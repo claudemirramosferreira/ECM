@@ -1,0 +1,62 @@
+<div class="row" ng-controller="TipoServicoCadastroCtrl as controller">
+    <div class="large-12 columns panel panel-border">
+
+        <alert ng-repeat="alert in alerts" type="alert.type" ng-click="controller.closeAlert($index)">{{alert.msg|translate}}</alert>
+
+        <div class="row">
+            <div class="large-8 columns">
+                <h5>{{acao === "cadastro" ? "novo" : "editar"|translate|uppercase}} {{"tipo.servico"|translate|uppercase}}</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-11 medium-11 small-10 columns">
+                <label>{{"tipo.servico"|translate}}<span class="terror">*</span></label>
+                <input type="text"ng-model="tipoServico.txTipoServico" maxlength="50" class="error">
+                <small class="error" ng-show="camposObrigatorios.txTipoServico.length">{{camposObrigatorios.txTipoServico|translate}}</small>
+            </div>	
+            
+            <div class="large-1 medium-11 small-10 columns" ng-show="acao === 'editar'">
+                    <label>{{"situacao"|translate}}</label>
+                     <div class="switch round tiny">
+                         <input id="boxSwitch{{$index}}" ng-model="tipoServico.csSituacao" ng-checked="tipoServico.csSituacao" type="checkbox" ng-show="acao == 'editar'">  <!--  ng-click="controller.modificarSituacao()" -->
+                     <label style="padding:0; margin:0;" for="boxSwitch{{$index}}" ng-show="acao == 'editar'"></label>
+                 </div>
+            </div>
+
+            <div class="large-1 medium-1 small-1 columns" ng-show="acao !== 'editar'">
+                <label>&nbsp;</label>
+                <button ng-click="controller.adicionarTipoServico()" class="right bt_blue bt_add" />
+            </div>            
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <span ng-show="tipoServicoList.length > 0 && acao !== 'editar'">
+                    <table class="tfull">
+                        <thead class="blue">
+                            <tr>
+                                <th width="80%">{{"tipo.servico"|translate}}</th>
+                                <th width="5%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in tipoServicoList">
+                                <td>{{item.txTipoServico}}</td>
+                                <td class="icon_remove" ng-click="controller.excluir($index)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </span>		
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <hr>
+
+                <button ng-click="controller.salvar()" class="right small round button">{{"salvar"|translate}}</button>
+                <button  ng-click="controller.cancelar()" class="button alert right">{{"cancelar"|translate}}</button>
+
+            </div>						
+        </div>    
+    </div>	
+</div>

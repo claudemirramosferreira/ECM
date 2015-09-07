@@ -26,6 +26,11 @@ ecmApp.config([
 
                 //auth
                 .when('/auth/user', {templateUrl: 'views/auth/user.html'})
+        
+                // geral
+                .when('/geral/tipo-documento', {templateUrl: 'views/geral/tipo-documento/consulta.html'})
+                .when('/geral/tipo-documento/:acao', {templateUrl: 'views/geral/tipo-documento/cadastro.html'})
+                
 
                 //nao encontrada
                 .otherwise({
@@ -72,6 +77,8 @@ ecmApp.constant('ecmRest', urlBase + 'ecm-rest/');
 //ecmApp.service('InfoInicial', InfoInicial);
 //ecmApp.service('Usuario', Usuario);
 
+// Geral
+ecmApp.service('TipoDocumento', TipoDocumento);
 
 
 //----------- CONTROLLERS ------------------------------------------------------
@@ -79,6 +86,10 @@ ecmApp.controller("HomeCtrl", ['$injector', '$scope', HomeCtrl]);
 ecmApp.controller("TopCtrl", ['$injector', '$scope', TopCtrl]);
 //ecmApp.controller("AuthCtrl", ['$injector', '$scope', AuthCtrl]);
 
+
+// Geral
+ecmApp.controller("TipoDocumentoConsultaCtrl", ['$injector', '$scope', TipoDocumentoConsultaCtrl]);
+ecmApp.controller("TipoDocumentoCadastroCtrl", ['$injector', '$scope', TipoDocumentoCadastroCtrl]);
 
 //------------------------------------------------------------------------------
 //DIRETIVAS------------------------------------------------------------------------------

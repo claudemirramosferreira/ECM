@@ -13,8 +13,17 @@ function CoreCtrl($injector, $scope) {
 
     this.alerts = [];
     this.scope('alerts', this.alerts);
+    this.scope('paginacao', this.alerts);
+    
+    this.scope("paginacao", {page: 1, limit: 10});
+    this.inicializarPaginacao();
     
     this.$rootScope.TOKEN = this.$cookies.get("TOKEN");
+}
+
+CoreCtrl.prototype.inicializarPaginacao = function () {
+    var paginacao = this.scope("paginacao");
+    this.scope("pagina", {page: paginacao.page, limit: paginacao.limit, totalItem: 0});
 }
 
 CoreCtrl.prototype.scope = function (name, value) {

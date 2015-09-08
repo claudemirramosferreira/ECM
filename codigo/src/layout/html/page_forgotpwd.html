@@ -1,0 +1,60 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Html version | Angulr</title>
+    <meta name="description" content="Angularjs, Html5, Music, Landing, 4 in 1 ui kits package">
+    <meta name="keywords" content="AngularJS, angular, bootstrap, admin, dashboard, panel, app, charts, components,flat, responsive, layout, kit, ui, route, web, app, widgets">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css" type="text/css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../bower_components/simple-line-icons/css/simple-line-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/font.css" type="text/css">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+  </head><body>
+    <div class="app app-header-fixed  ">
+      <div class="container w-xl w-auto-xs" ng-init="app.settings.container = false;">
+        <div class="wrapper text-center">
+          <div class="wrapper text-center">
+            <img src="img/marca-ecm-002.png" class="center-block img-responsive">
+          </div>
+          <a href="" class="navbar-brand block m-t">ECM Interactive</a>
+          <div class="wrapper text-center">
+            <strong>Insira o email para resetar sua senha</strong>
+          </div>
+        </div>
+        <div class="m-b-lg">
+          <form name="reset" ng-init="isCollapsed=true">
+            <div class="list-group list-group-sm">
+              <div class="list-group-item">
+                <input type="email" placeholder="Email" ng-model="email" class="form-control no-border" required="">
+              </div>
+            </div>
+            <button type="submit" ng-disabled="reset.$invalid" class="btn btn-block btn-info btn-lg" ng-click="isCollapsed = !isCollapsed">Enviar</button>
+          </form>
+          <div collapse="isCollapsed" class="m-t">
+            <div class="alert alert-success">
+              <p>Um link de reset será enviado para seu endereço de email, por favor verifique
+                seu email.
+                <a ui-sref="access.signin" class="btn btn-sm btn-success">Entrar</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center" ng-include="'tpl/blocks/page_footer.html'">
+          <p>
+            <small class="text-muted">ECM Interactive app gestor de arquivos
+              <br>© 2015-2016</small>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/ui-load.js"></script>
+    <script src="js/ui-jp.config.js"></script>
+    <script src="js/ui-jp.js"></script>
+    <script src="js/ui-nav.js"></script>
+    <script src="js/ui-toggle.js"></script>
+  
+
+</body></html>

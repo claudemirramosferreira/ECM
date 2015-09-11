@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<bean id="params" class="org.apache.commons.httpclient.params.HttpClientParams">
+		<property name="authenticationPreemptive" value="true"/>
+	</bean>
+	
+	<bean id="credentialsActiviti" class="org.apache.commons.httpclient.UsernamePasswordCredentials"> <!-- scope="session" -->
+		<constructor-arg value="kermit"/>
+		<constructor-arg value="kermit"/>
+	</bean>
+	
+	<bean id="stateActiviti" class="br.com.interactive.activiti.util.CustomHttpState"> <!-- scope="session"-->
+		<property name="credentials" ref="credentialsActiviti"/>
+	</bean>
+	
+	<bean id="httpClientActiviti" class="org.apache.commons.httpclient.HttpClient" > <!-- scope="session"-->
+		<constructor-arg ref="params"/>
+		<property name="state" ref="stateActiviti"/>
+	</bean>
+	
+	<bean id="requestFactoryActiviti" class="org.springframework.http.client.CommonsClientHttpRequestFactory" > <!-- scope="session"-->
+		<constructor-arg ref="httpClientActiviti"/>
+	</bean>
+	
+	<bean id="restTemplateActiviti" class="org.springframework.web.client.RestTemplate"> <!-- scope="session"-->
+		<constructor-arg ref="requestFactoryActiviti"/>
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+	            <bean class="org.springframework.http.converter.FormHttpMessageConverter"/>
+	            <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean>
+</beans>

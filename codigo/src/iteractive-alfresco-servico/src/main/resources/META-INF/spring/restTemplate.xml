@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<bean id="params" class="org.apache.commons.httpclient.params.HttpClientParams">
+		<property name="authenticationPreemptive" value="true"/>
+	</bean>
+	
+	<bean id="credentialsAlfresco" class="org.apache.commons.httpclient.UsernamePasswordCredentials"> <!-- scope="session" -->
+		<constructor-arg value="admin"/>
+		<constructor-arg value="admin"/>
+	</bean>
+	
+	<bean id="stateAlfresco" class="br.fucapi.bpms.alfresco.util.CustomHttpState"> <!-- scope="session"-->
+		<property name="credentials" ref="credentialsAlfresco"/>
+	</bean>
+	
+	<bean id="httpClientAlfresco" class="org.apache.commons.httpclient.HttpClient" > <!-- scope="session"-->
+		<constructor-arg ref="params"/>
+		<property name="state" ref="stateAlfresco"/>
+	</bean>
+	
+	<bean id="requestFactoryAlfresco" class="org.springframework.http.client.CommonsClientHttpRequestFactory" > <!-- scope="session"-->
+		<constructor-arg ref="httpClientAlfresco"/>
+	</bean>
+	
+	<bean id="restTemplateAlfresco" class="org.springframework.web.client.RestTemplate"> <!-- scope="session"-->
+		<constructor-arg ref="requestFactoryAlfresco"/>
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+	            <bean class="org.springframework.http.converter.FormHttpMessageConverter"/>
+	            <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean>
+</beans>

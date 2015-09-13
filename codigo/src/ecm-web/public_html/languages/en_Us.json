@@ -18,8 +18,9 @@
     "situacao": "Situation",
     
     
-    "tipo.documento": "Document Type"
+    "tipo.documento": "Document Type",
     
+    "usuario": "User"   
     
     
 }

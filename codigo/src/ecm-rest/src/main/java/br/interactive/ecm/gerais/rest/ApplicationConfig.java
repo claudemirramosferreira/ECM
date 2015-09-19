@@ -32,9 +32,6 @@ public class ApplicationConfig extends Application {
         resources.add(br.interactive.ecm.gerais.rest.CrossOriginResourceSharingFilter.class);
         resources.add(br.interactive.ecm.gerais.rest.SysVersaoResource.class);
         resources.add(br.interactive.ecm.gerais.rest.TipoDocumentoResource.class);
-        resources.add(br.interactive.ecm.mapper.BusinessExceptionMapper.class);
-        resources.add(br.interactive.ecm.mapper.ConstraintViolationMapper.class);
-        resources.add(br.interactive.ecm.mapper.EJBExceptionMapper.class);
         resources.add(br.interactive.ecm.model.filtro.AutenticacaoInterceptor.class);
     }
 

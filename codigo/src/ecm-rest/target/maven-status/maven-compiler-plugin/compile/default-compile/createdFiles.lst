@@ -1,6 +1,0 @@
-br\interactive\ecm\gerais\rest\CrossOriginResourceSharingFilter.class
-br\interactive\ecm\gerais\rest\ApplicationConfig.class
-br\interactive\ecm\gerais\rest\AuthenticatorResource.class
-br\interactive\ecm\gerais\service\UsuarioService.class
-br\interactive\ecm\gerais\service\SysVersaoService.class
-br\interactive\ecm\gerais\rest\SysVersaoResource.class

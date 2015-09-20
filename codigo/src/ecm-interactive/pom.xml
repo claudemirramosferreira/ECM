@@ -27,7 +27,6 @@
  
   <modules>
     <module>ecm-util</module>
-    <module>ecm-model</module>
     <module>ecm-rest</module>
   </modules>
  

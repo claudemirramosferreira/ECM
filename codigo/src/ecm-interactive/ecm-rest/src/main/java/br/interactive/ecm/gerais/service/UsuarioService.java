@@ -5,6 +5,7 @@
  */
 package br.interactive.ecm.gerais.service;
 
+import br.com.interactive.alfresco.servico.impl.AlfrescoServicoImpl;
 import br.interactive.ecm.exception.BusinessException;
 import br.interactive.ecm.message.ErrorMessage;
 import br.interactive.ecm.model.dao.gerais.UserSessionDAO;
@@ -16,6 +17,7 @@ import br.interactive.ecm.model.entity.Usuario;
 import br.interactive.ecm.util.StringUtil;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -28,14 +30,16 @@ import org.apache.commons.lang.time.DateUtils;
  */
 @Stateless
 public class UsuarioService {
-    
+
     @Inject
     private UserSessionDAO userSessionDAO;
-    
+
     @Inject
     private UsuarioDAO usuarioDAO;
-    
-    
+
+    @Inject
+    private AlfrescoServicoImpl alfrescoServico;
+
     public LoginDTO login(LoginDTO user, HttpServletRequest request) {
 
         if (!StringUtil.notEmpty(user.getSenha())) {
@@ -51,7 +55,6 @@ public class UsuarioService {
         usua.setPessoa(p);
 
 //        this.validarUsuarioParaAutenticacao(usua);
-
         UserSession userSession = userSessionDAO.getUserSessionLoginBrowserIp(usua.getTxLogin(),
                 request.getHeader("user-agent"), request.getRemoteAddr());
 
@@ -76,8 +79,7 @@ public class UsuarioService {
 
         return user;
     }
-    
-    
+
     public LoginDTO isGetUser(HttpServletRequest request) {
 
         String token = request.getHeader("Authorization");
@@ -91,5 +93,17 @@ public class UsuarioService {
 
         return null;
     }
+
+    public List<br.com.interactive.alfresco.model.Usuario> listarUsuarios() {
+        return alfrescoServico.getUsuarios();
+    }
+
+    public void incluir(br.com.interactive.alfresco.model.Usuario usuario) {
+        this.alfrescoServico.incluir(usuario);
+    }
     
+    public void alterar(br.com.interactive.alfresco.model.Usuario usuario) {
+        this.alfrescoServico.alterar(usuario);
+    }
+
 }

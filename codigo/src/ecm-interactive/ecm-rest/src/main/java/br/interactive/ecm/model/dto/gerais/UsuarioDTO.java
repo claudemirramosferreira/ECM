@@ -18,7 +18,5 @@ public class UsuarioDTO {
     private String lastName;
     
     private String email;
-    ~
-    
     
 }

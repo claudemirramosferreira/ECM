@@ -6,6 +6,7 @@
         <artifactId>ecm-interactive</artifactId>
         <version>1.0</version>
     </parent>
+    
     <artifactId>ecm-rest</artifactId>
     <packaging>war</packaging>
 
@@ -17,6 +18,13 @@
     </properties>
 
     <dependencies>
+        
+        <dependency>
+            <groupId>iteractive-alfresco-servico</groupId>
+            <artifactId>iteractive-alfresco-servico</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>ecm-model</artifactId>

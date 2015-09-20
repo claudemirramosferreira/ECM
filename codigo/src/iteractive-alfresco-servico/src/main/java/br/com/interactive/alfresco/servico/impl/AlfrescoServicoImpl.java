@@ -394,6 +394,10 @@ public class AlfrescoServicoImpl implements AlfrescoServico, Serializable {
 		Grupo grupo = Grupo.fromJsonToUsuarioGrupo(response.getBody());
 		return grupo.getData();
 	}
+        
+        public void incluir(Usuario usuario){
+            incluirUsuario(usuario.getFirstName(), usuario.getLastName(), usuario.getEmail(), usuario.getUserName());
+        }
 
 	public void incluirUsuario(String firstName, String lastName, String email,
 			String userName) {
@@ -482,6 +486,15 @@ public class AlfrescoServicoImpl implements AlfrescoServico, Serializable {
 		System.out.println(uri);
 
 	}
+        
+        public void alterar(Usuario usuario){
+            //TODO corrigir o enable
+            Boolean enable = true;
+            editarUsuario(usuario.getUserName(), 
+                    usuario.getFirstName(), 
+                    usuario.getLastName(),
+                    usuario.getEmail(), enable);
+        }
 
 	public void editarUsuario(String userName, String firstName,
 			String lastName, String email, Boolean enable) {

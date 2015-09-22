@@ -1,0 +1,15 @@
+.svn/
+
+.settings/
+
+.target/
+
+.project
+
+.war
+
+.metadata/
+
+.factorypath
+
+.class

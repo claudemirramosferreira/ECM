@@ -1,0 +1,375 @@
+
+#body-login{
+    background-repeat: repeat;
+    background-color: #333 !important;
+    background:
+    url("../assets/login_luz_bg.png") top center no-repeat,
+    url("../assets/bg-login.jpg") top left repeat;
+
+}
+h6{
+    font-weight: bold;
+    color: #2C605A !important;
+}
+
+/* header */
+.header {
+	margin-bottom: 30px;
+    background: none repeat scroll 0% 0% #408d84;
+    background: #408d84; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQwOGQ4NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzdhNzIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #408d84 0%, #337a72 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#408d84), color-stop(100%,#337a72)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #408d84 0%,#337a72 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #408d84 0%,#337a72 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #408d84 0%,#337a72 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #408d84 0%,#337a72 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#408d84', endColorstr='#337a72',GradientType=0 ); /* IE6-8 */
+}
+
+/* footer */
+.footer {
+	margin-bottom: 0px;
+	border-top: 1px solid #e3e3e3;
+	padding-top: 20px;
+    background-color: #f2f2f2;
+}
+.footer p{
+	color: #999;
+	font-size: 0.8em;
+}
+
+.panel-footer{
+    background-color: #4A4E50;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    -webkit-box-shadow: inset 2px 2px 3px 0px rgba(50, 50, 50, 1);
+    -moz-box-shadow:    inset 2px 2px 3px 0px rgba(50, 50, 50, 1);
+    box-shadow:         inset 2px 2px 3px 0px rgba(50, 50, 50, 1);
+}
+.panel-footer p{
+    color: #fff;
+    font-size: 0.7em;
+}
+
+/* green menu */
+ul.subnav {
+    display: block;
+}
+ul.subnav li {
+    list-style: none outside none;
+    float: left;
+    width: auto;
+}
+ul.subnav li a.current, ul.subnav li a:hover {
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.15);
+    color: #FFF;
+}
+ul.subnav li a {
+    font-size: 14px;
+    padding: 20px;
+    display: block;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bolder;    
+}
+
+/* sidebar */
+.sidebar {
+    background: none repeat scroll 0% 0% #FFFFFF;
+    /*border: 1px solid #e3e3e3;*/
+	margin-bottom: 20px;
+}
+.accordion-navigation > a{
+    font-size: 0.77778rem !important;
+    font-weight: bold;
+}
+
+/* login */
+.logo{
+	margin-top: 3em;
+}
+.navlogin li{
+    list-style: none;
+}
+.navlogin li a{
+	display: block;
+    color: #FFFFFF;
+    padding: 7px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    height: 32px;	
+    font-size: 0.75em;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* modal solicitar senha */
+@media only screen and (min-width: 40.063em) {
+    dialog.tiny-senha, .reveal-modal.tiny-senha {
+      margin-left: -10%;
+      width: 20%; 
+    }
+}
+
+.ic {
+    background-image: url('../assets/new-login-sprite.png');
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 12px;
+    float: left;
+}
+.icon-senha {
+    background-position: 0px 0px;
+}
+.icon-cadastro {
+    background-position: -19px 0px;
+}
+.icon-trabalho {
+    background-position: -41px 0px;
+}
+.icon-portugues {
+    background-position: -59px 0px;
+}
+.icon-english {
+    background-position: -77px 0px;
+}
+
+/* form */
+.obrigatorio{
+    color: red;
+}
+
+/* tabela: hover */
+table tbody tr:hover{ background-color: #eaf5f7;}
+table tfoot td span{font-size: 0.8em; color: #999; font-weight: normal;}
+
+/* sombra */
+.shadow{
+-webkit-box-shadow: 0px 1px 30px 0px rgba(50, 50, 50, 1);
+-moz-box-shadow:    0px 1px 30px 0px rgba(50, 50, 50, 1);
+box-shadow:         0px 1px 30px 0px rgba(50, 50, 50, 1);  
+}
+
+/* botÃƒÂµes */
+.bt-green{
+    background: #408d84; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQwOGQ4NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUyJSIgc3RvcC1jb2xvcj0iIzVhYTI5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUzJSIgc3RvcC1jb2xvcj0iIzQwOGQ4NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MDhkODQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #408d84 0%, #5aa299 52%, #408d84 53%, #408d84 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#408d84), color-stop(52%,#5aa299), color-stop(53%,#408d84), color-stop(100%,#408d84)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #408d84 0%,#5aa299 52%,#408d84 53%,#408d84 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #408d84 0%,#5aa299 52%,#408d84 53%,#408d84 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #408d84 0%,#5aa299 52%,#408d84 53%,#408d84 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #408d84 0%,#5aa299 52%,#408d84 53%,#408d84 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#408d84', endColorstr='#408d84',GradientType=0 ); /* IE6-8 */
+    border: 1px solid #408d84;    
+}
+.bt-green:hover{
+    background: #2e6a62;
+}
+.bt-gray{
+    background: #9b9b9b; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzliOWI5YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2I3YjJiMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzk5OTk5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5OTk5OTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #9b9b9b 0%, #b7b2b2 50%, #999999 51%, #999999 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9b9b9b), color-stop(50%,#b7b2b2), color-stop(51%,#999999), color-stop(100%,#999999)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #9b9b9b 0%,#b7b2b2 50%,#999999 51%,#999999 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #9b9b9b 0%,#b7b2b2 50%,#999999 51%,#999999 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #9b9b9b 0%,#b7b2b2 50%,#999999 51%,#999999 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #9b9b9b 0%,#b7b2b2 50%,#999999 51%,#999999 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b9b9b', endColorstr='#999999',GradientType=0 ); /* IE6-8 */
+    border: 1px solid #999999;    
+}
+.bt-gray:hover{
+    background: #999999 !important;
+}
+
+/* legenda no label */
+label em{
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* sprite topbar */
+
+.ic-topbar {
+    background-image: url('../assets/sprite-topbar.png');
+    width: 16px;
+    height: 16px;
+    display:inline-block;
+}
+.ic-seguranca { background-position: 0px 0px; }
+.ic-alterar-senha { background-position: -17px 0px; }
+.ic-aprovadores { background-position: -35px 0px; }
+.ic-aprovar { background-position: -53px 0px; }
+.ic-desbloquear { background-position: -74px 0px; }
+.ic-manutencao { background-position: -90px 0px; }
+.ic-perfis-acesso { background-position: -108px 0px; }
+.ic-settings { background-position: -124px 0px; }
+.ic-logout { background-position: -140px 0px; }
+
+/* tira margem bottom do input */
+.input-inline{ margin: 0 0 !important;}
+
+
+/* rodapÃƒÂ© colado na base  */
+.general { 
+    height: 100%; 
+}
+body > .general { 
+    height: auto; 
+    min-height: 100%; 
+}
+.content-main { 
+    padding-bottom: 105px;
+} /* O padding, deve ser o mesmo valor da altura do rodapÃƒÂ© */
+#footer-login, .footer {
+    position: relative;
+    margin-top: -105px; /* Este margin, tem que ser o mesmo valor da altura do rodapÃƒÂ©, sÃƒÂ³ que negativo */
+    height: 105px; /* E aqui, fica a altura do rodapÃƒÂ© */
+    clear: both;
+}
+
+/* ======================================================
+        TABS
+========================================================= */        
+
+.shs {
+    color: #FFFFFF;
+    border-radius: 4px 4px 0 0 ;
+    font-size: 0.8em;
+    display: block;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: 1px solid #5aa299;
+    font-weight: bold;
+}
+
+.shs:hover,
+.shs:focus,
+.shs:active { color: #FFFFFF; }
+
+.shs + .tabs { display: none; }
+
+.box-tabs{margin-top: 2em; margin-bottom: 1em;}
+
+.tabs dd > a {
+    background: #408D84;
+    border: 1px solid #5aa299;
+    color: #FFFFFF;
+    font-size: 0.75em;
+    padding: 8px 13px;
+    padding: .5rem .75rem;
+    margin: -1px 0;
+}
+
+.tabs dd > a:hover,
+.tabs dd > a:focus,
+.tabs dd > a:active { background: #5aa299; }
+
+.tabs dd.active a,
+.tabs dd.active a:hover,
+.tabs dd.active a:focus,
+.tabs dd.active a:active {
+    background: #367870;
+    color: #FFFFFF;
+}
+
+.tabs dd { float: none; }
+
+/* Tablets Resolution */
+@media only screen and (min-width : 641px) and (max-width : 1024px) {
+    .tabs dd > a {
+        margin-bottom: 1em;
+        padding: .5rem 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 1021px) {
+    .tabs dd { float: left; width: 100%!important; }
+    .tabs dd > a {
+        margin-bottom: 0em;
+    }
+}
+
+@media only screen and (max-width: 40em) {
+    .tabs dd { float: left; width: 100%!important;}
+}
+
+@media only screen and (min-width: 40.063em) {
+    
+    .tabs dd { float: left; /* width: auto!important; */}
+    .shs { display: none; }
+    .shs + .tabs { display: block; }
+}
+
+.sub-tabs {
+    border-bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.sub-tabs dd > a {
+    border: 1px solid #5aa299;
+    font-weight: normal;
+    padding: .5rem .75rem;
+}
+
+.panel-accordion{padding: 0.5rem}
+
+@media only screen and (max-width: 40.063em) {    
+    .sidebar { margin-top: 20px; font-size: 0.55em; }
+    .accordion .accordion-navigation > a, .accordion dd > a { font-size: 0.75em !important; }
+    .side-nav li { font-size: 0.75rem;}
+}
+
+.ngdialog-overlay{
+    z-index : -1
+}
+
+.switch{
+    margin-bottom: 0;
+}
+
+small.error{
+    background: transparent;
+    color: #f04124;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+select-filter{
+    position: relative;
+}
+
+select-filter #select-container{
+    position: absolute;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* padding: 10px; */
+    border: 1px solid #CCC;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+    margin-top: 0px;
+    top: 0px;
+    left: 2px;
+    z-index: 9;
+    width: 100%;
+}
+
+
+select-filter #select-container .item {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 12px;
+}
+
+select-filter #select-container .item:hover{
+    background-color: #FFF;
+}

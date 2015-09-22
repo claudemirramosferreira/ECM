@@ -1,0 +1,28 @@
+<div ng-controller="TopCtrl as controller">
+    <div class="contain-to-grid menu-user">
+        <top-bar class="contain-to-grid menu-user">
+            <ul class="title-area">
+                <li class="name"><img src="images/logo_core.png"></li>
+            </ul>
+
+            <top-bar-section class="menu-user">
+                <ul class="right">
+                <li>
+                    <button class="bt-home azul" ng-click="controller.irTelaHome()"></button>
+
+                </li>
+
+                <li has-dropdown class="menu-user margin-top-bar">
+                    <a><div style="text-align:center">{{$root.ecmUser.primeiroNome}}</div></a>
+                    <ul top-bar-dropdown>
+                        <li ng-click="controller.redirecionar()"><a><span class="icon-menu-user icon-password"></span>{{"home.btn.alterarsenha"|translate}}</a></li>
+                        <li ng-click="controller.mostrarSobre()"><a><span class="icon-menu-user icon-info"></span>{{"home.btn.informacoes"|translate}}</a></li>
+                        <li ng-click="controller.mudarIdioma()"><a><span class="icon-menu-user icon-language"></span>{{idioma}}</a></li>
+                        <li ng-click="controller.sairSistema()"><a><span class="icon-menu-user icon-exit"></span>{{"home.btn.sair"|translate}}</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </top-bar-section>
+        </top-bar>    
+    </div>
+</div>

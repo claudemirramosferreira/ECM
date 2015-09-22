@@ -1,0 +1,31 @@
+{
+    
+    "msg.login.efetuato": "Login efetuado com sucesso.",
+    "msg.bomdia": "Bom dia Sr(a).",
+    "msg.boatarde": "Boa tarde Sr(a).",
+    "msg.boanoite": "Boa noite Sr(a).",
+    "msg.bem.vindo": "Bem vindo ",
+    "msg.salvo": "Registro salvo com sucesso.",
+    "msg.cemregistros": "Exibindo apenas os 100 registros com data mais recente.",
+    "msg.excluido": "Registro excluído com sucesso.",
+    "autenticar.errologin": "Autenticação inválida.",
+    "seguranca.login.naoencontrado": "Login não encontrado",
+    "pesquise.por":"Pesquise por: ",
+    "registro.duplicado": "Registro duplicado",
+    "nenhum.registro": "Nenhum registro encontrado",
+    "todos.registros": "Todos registros",
+    "msg.informe.registro": "Informe pelo menos um registro.",
+    
+    
+    "novo": "Novo",
+    "nova": "Nova",
+    "home.btn.sair": "Sair",
+    "home.btn.informacoes": "Informações",
+    "titulo.busca": "Busca",
+    "situacao": "Situação",
+    
+    
+    "tipo.documento": "Tipo de Documento"
+    
+}
+

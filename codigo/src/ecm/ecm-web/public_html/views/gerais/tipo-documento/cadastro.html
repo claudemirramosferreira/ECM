@@ -1,0 +1,68 @@
+<div class="row" ng-controller="TipoDocumentoCadastroCtrl as controller">
+    <div class="large-12 columns panel panel-border">
+
+        <alert ng-repeat="alert in alerts" type="alert.type" ng-click="controller.closeAlert($index)">{{alert.msg|translate}}</alert>
+
+        <div class="row">
+            <div class="large-8 columns">
+                <h5>{{(acao === "editar" ? "editar" : "novo")|translate|uppercase}} {{"tipo.documento"|translate|uppercase}}</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-8 medium-5 small-12 columns">
+                <label>{{"descricao"|translate}}<span class="terror">*</span></label>
+                <input type="text"ng-model="tipoDocumento.txTipoDocumento" maxlength="50" class="error">
+                <small class="error" ng-show="camposObrigatorios.txTipoDocumento.length">{{camposObrigatorios.txTipoDocumento|translate}}</small>
+            </div>	
+
+            <div class="large-3 medium-6 small-10 columns">
+                <label>{{"situacao"|translate}}</label>
+                <select ng-model="tipoDocumento.csAtivo" 
+                        ng-disabled="acao === 'cadastro'"
+                        ng-options="s.id as s.descricao|translate for s in situacoes">
+                </select>
+            </div>
+
+            <div class="large-1 medium-1 small-2 columns columns" ng-show="exibirBotaoAdicionar">
+                <label>&nbsp;</label>
+                <button class="right bt_blue bt_add" ng-click="controller.addTipoDocumento(tipoDocumento)" ></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <span ng-show="listaTipoDocumento.length > 0 && acao === 'cadastro'">
+                    <table class="tfull">
+                        <thead class="blue">
+                            <tr>
+                                <th width="85%">{{"descricao"|translate}}</th>
+                                <th width="10%">{{"situacao"|translate}}</th>
+                                <th width="5%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in listaTipoDocumento">
+                                <td><a ng-click="controller.editTipoDocumento($index)">{{item.txTipoDocumento}}</a></td>
+                                <td>
+                                    <div class="switch round tiny">
+                                        <input id="boxSwitch{{$index}}" ng-model="item.csAtivo" ng-checked="item.csAtivo" type="checkbox" ng-disabled="true">
+                                        <label style="padding:0; margin:0;" for="boxSwitch{{$index}}"></label>
+                                    </div>
+                                </td>
+                                <td class="icon_remove" ng-click="controller.remover($index)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </span>	
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <hr>
+
+                <button ng-click="controller.salvar(tipoDocumento)" class="right small round button">{{"salvar"|translate}}</button>
+                <button  ng-click="controller.cancelar()" class="button alert right">{{"cancelar"|translate}}</button>
+
+            </div>	
+        </div>
+    </div>	
+</div>

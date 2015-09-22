@@ -197,6 +197,9 @@ public class UsuarioService {
 
         Usuario usua = usuarioDAO.getUsuarioByLoginSenha(user.getLogin(), user.getSenha());
 
+        if (usua == null) {
+            throw new BusinessException(new ErrorMessage("seguranca.login.naoencontrado"));
+        }
 //        this.validarUsuarioParaAutenticacao(usua);
 
         UserSession userSession = userSessionDAO.getUserSessionLoginBrowserIp(usua.getTxLogin(),

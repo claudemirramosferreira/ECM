@@ -2,6 +2,9 @@ package br.interactive.ecm.model.constant;
 
 import br.interactive.ecm.util.StringUtil;
 
+/**
+ * @author adriana.nascimento
+ */
 public enum EstadoConstant {
 
     /**

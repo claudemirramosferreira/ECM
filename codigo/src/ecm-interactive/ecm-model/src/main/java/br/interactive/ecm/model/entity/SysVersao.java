@@ -1,77 +1,61 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.interactive.ecm.model.entity;
 
-import javax.persistence.Basic;
+import java.util.Calendar;
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
+import lombok.Getter;
+import lombok.Setter;
+
+import org.hibernate.validator.constraints.Length;
 
 /**
- * @author robson.ramos
+ * The persistent class for the SYS_VERSAO database table.
+ *
  */
 @Entity
-@Table(name = "sys_versao")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "SysVersao.findAll", query = "SELECT s FROM SysVersao s"),
-    @NamedQuery(name = "SysVersao.findByIdSysVersao", query = "SELECT s FROM SysVersao s WHERE s.idSysVersao = :idSysVersao"),
-    @NamedQuery(name = "SysVersao.findByTxVersao", query = "SELECT s FROM SysVersao s WHERE s.txVersao = :txVersao")})
-public class SysVersao extends AbstractEntity {
-    
+@Table(name = "SYS_VERSAO")
+@SequenceGenerator(name = "idSysVersao", sequenceName = "SYS_VERSAO_ID_SEQ")
+public class SysVersao {
+
+    private static final long serialVersionUID = 1L;
+
+    @Getter @Setter
     @Id
-    @Basic(optional = false)
+    @Column(name = "ID_SYS_VERSAO", unique = true, nullable = true)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "idSysVersao")
     @NotNull
-    @Column(name = "id_sys_versao")
-    private Long idSysVersao;
+    private Long id;
     
-    @Basic(optional = false)
+    @Getter @Setter
+    @Column(name = "DT_ATUALIZACAO")
+    private Calendar dtAtualizacao;
+
+    @Getter @Setter
+    @Column(name = "TX_EXTERNA", length = 20)
+    @Length(max = 20)
     @NotNull
-    @Size(min = 1, max = 40)
-    @Column(name = "tx_versao")
-    private String txVersao;
+    private String txExterna;
+
+    @Getter @Setter
+    @Column(name = "TX_INTERNA", length = 20)
+    @Length(max = 20)
+    @NotNull
+    private String txInterna;
+
+    @Getter @Setter
+    @Column(name = "VERSAO")
+    private BigDecimal versao;
 
     public SysVersao() {
     }
 
-    public SysVersao(Long idSysVersao) {
-        this.idSysVersao = idSysVersao;
-    }
 
-    public SysVersao(Long idSysVersao, String txVersao) {
-        this.idSysVersao = idSysVersao;
-        this.txVersao = txVersao;
-    }
-
-    @Override
-    public Long getId() {
-        return idSysVersao;
-    }
-    
-    public Long getIdSysVersao() {
-        return idSysVersao;
-    }
-
-    public void setIdSysVersao(Long idSysVersao) {
-        this.idSysVersao = idSysVersao;
-    }
-
-    public String getTxVersao() {
-        return txVersao;
-    }
-
-    public void setTxVersao(String txVersao) {
-        this.txVersao = txVersao;
-    }
-
-    
 }

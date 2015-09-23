@@ -5,10 +5,6 @@ import java.io.Serializable;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
 
-/**
- *
- * @author robson.ramos
- */
 @MappedSuperclass
 public abstract class AbstractEntity implements Serializable {
 
@@ -55,11 +51,6 @@ public abstract class AbstractEntity implements Serializable {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "[ id=" + getId() + " ]";
-    }
-    
     public boolean isChecked() {
         return checked;
     }

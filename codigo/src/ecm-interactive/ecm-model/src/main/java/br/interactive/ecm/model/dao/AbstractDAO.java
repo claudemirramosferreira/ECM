@@ -21,6 +21,10 @@ import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Selection;
 import javax.persistence.metamodel.SingularAttribute;
 
+/**
+ * @author Osenias
+ * @param <T>
+ */
 @SuppressWarnings("unchecked")
 public abstract class AbstractDAO<T> {
 
@@ -130,5 +134,14 @@ public abstract class AbstractDAO<T> {
     protected Predicate[] addPredicate(List<Predicate> predicates) {
         return predicates.toArray(new Predicate[]{});
     }
-
+    
+    
+    protected boolean notEmpty(String str) {
+        return null != str && str.length() > 0;
+    }
+    
+    protected boolean notEmpty(Object obj) {
+        return null != obj;
+    }
+    
 }

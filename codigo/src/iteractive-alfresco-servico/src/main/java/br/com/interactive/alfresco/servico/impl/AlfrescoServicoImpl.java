@@ -98,8 +98,7 @@ public class AlfrescoServicoImpl implements AlfrescoServico, Serializable {
 		}
 	}
 
-	public Usuario autenticarUsuario(String login, String senha)
-			throws HttpClientErrorException, DocumentException {
+	public Usuario autenticarUsuario(String login, String senha) throws HttpClientErrorException, DocumentException {
 
 		this.postConstructor();
 
